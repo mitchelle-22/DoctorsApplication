@@ -1,0 +1,82 @@
+<ion-content [fullscreen]="true">
+  
+  <ion-header [translucent]="true" >
+    <ion-toolbar>
+      <ion-item lines="none">
+        <ion-label style="font-weight: 800;">
+          My appointments
+          <p style="font-weight: 400;color: #433465 ;">{{today | date:'fullDate'}}</p>
+        </ion-label>
+        <ion-buttons slot="start">
+          <ion-button color="primary" routerLink="/tabs/tab1">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="start">
+          <ion-button color="primary"  >
+            <ion-icon name="refresh-outline" (click)="run()"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons start>
+      
+      </ion-buttons>
+      <ion-segment>
+        <ion-segment-button value="Upcoming">
+          Upcoming
+        </ion-segment-button>
+        <ion-segment-button value="past">
+          Past
+        </ion-segment-button>
+      </ion-segment>
+      <ion-buttons end>
+        
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngFor="let item of bookings ; let i = index" class="ion-margin">
+    <ion-card-header>
+
+      <ion-item>
+        <!-- <ion-icon *ngIf="item.value.description === 'dental'" size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.value.description === 'therapist'"  size="small" name="ellipse"></ion-icon>
+        <ion-icon *ngIf="item.value.description === 'x-ray'"  size="small" name="ellipse"></ion-icon> -->
+        <ion-label> {{ item.description}}</ion-label>
+      </ion-item>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Booked Date:{{item.date | date:'fullDate'}}</ion-label>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label>Booked for:{{item.userId}}</ion-label>
+      </ion-item> -->
+    </ion-card-content>
+    <ion-row>
+      <ion-item button (click)="update(item)">
+        <ion-icon name="create-outline"></ion-icon>
+        <p>Update</p>
+      </ion-item>
+
+      <ion-item button (click)="removeBooking(item)">
+        <ion-icon name="trash-outline"></ion-icon>
+        <p>Cancel Appointment</p>
+      </ion-item>
+    </ion-row>
+
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addNewItem()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

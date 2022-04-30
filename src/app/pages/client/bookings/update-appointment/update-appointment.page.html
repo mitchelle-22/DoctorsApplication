@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title> Update appointment</ion-title>
+    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content >
+  <ion-card class="ion-align-self-center" >
+
+   <ion-item>
+     <ion-label >Appointment type</ion-label>
+     <ion-select [(ngModel)]="bookingType">
+       <ion-select-option value="therapy">therapy</ion-select-option>
+       <ion-select-option value="x-ray">x-ray</ion-select-option>
+       <ion-select-option value="Surgery" selected>Surgery</ion-select-option>
+      </ion-select>
+   </ion-item>
+  
+   <ion-item>
+     <ion-icon name="calendar-outline"slot="start"></ion-icon>
+     <ion-label >Date :</ion-label>
+     <ion-datetime [(ngModel)]="date" min = "{{today}}" max="2800-12-31" displayFormat="D MMM YYYY H:mm" ></ion-datetime>
+   </ion-item>
+ 
+   
+   <ion-item>
+      <ion-textarea [(ngModel)]="docId"  placeholder="Appointment for : "></ion-textarea>
+   </ion-item>
+ 
+   <ion-item>
+    <ion-textarea [(ngModel)]="userId"  placeholder="Contact : "></ion-textarea>
+   </ion-item>
+   
+   <ion-button class="ion-margin" expand="block" shape="round" (click)="updateBooking()" >Book</ion-button>
+   <ion-button (click)="dismis()" shape="round" >close</ion-button>
+   
+  </ion-card>
+
+</ion-content>

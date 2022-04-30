@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/signup" >Sign up</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/admin-login" >Admin Login</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="header" style="position: relative;top:5vh">
+    <img src="../../assets/icon/favicon.png" class="smallLogo" />
+  </div>
+
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" style="position: relative;top:10vh">
+      <ion-list  style="background-color: #bde2dd;">
+
+        <ion-item >
+        <ion-label position="floating">Email</ion-label>
+        <ion-input  autocomplete="off" name="username"  placeholder="Enter Email" formControlName="email"></ion-input>
+      </ion-item>
+
+       <ion-item>
+
+
+        <ion-label position="floating"> Password</ion-label>
+
+          <ion-input [type]="showPassword ? 'text' : 'password'" placeholder="Enter Password"
+          formControlName="password" type="password">
+
+          </ion-input>
+          <ion-icon slot="end" [name]="pwdIcon" (click)="togglePwd()" style="margin-top: 7% auto;"></ion-icon>
+      </ion-item>
+
+      </ion-list>
+      <ion-button expand="block" style="width: 15em;position: relative;left: 18%;" shape="round" color="secondary" type="submit">Login</ion-button>
+
+  </form>
+
+</ion-content>

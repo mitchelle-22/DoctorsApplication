@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Availability</ion-title>
+      <ion-buttons slot="start">
+        <ion-button (click)="dismiss()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    
+  </ion-header>
+  
+  <div class="center">
+    <div class="header-image">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt="">
+    </div>
+  
+   <ion-card >
+      <ion-grid>
+        <ion-col >
+          <ion-card-header>
+            <ion-title class="card-title">
+              We are available on
+            </ion-title>
+          </ion-card-header>
+          <ion-row *ngFor="let item of todoList">
+            <ion-col size="5" ><div class="col weekdays" >{{item.day}}</div></ion-col>
+            <ion-col size="6"><div class="col appointment-time" >{{item.time}}</div></ion-col>
+            
+            <ion-icon size="1" name="create" (click)="presentModal(item.day, item.time)" class="time-update"></ion-icon>
+            <!-- <ion-icon size="1" name="create" (click)="presentModal()" class="time-update"></ion-icon> -->
+            
+            
+          </ion-row>
+          <ion-card-subtitle class="lunch-text">
+            <span class="subtitle" style="color:#0d173c">Lunch time </span> 01:00 <span  style="color:#0d173c"> PM </span>  - 02:00PM Everyday
+          </ion-card-subtitle>
+  
+  
+          <ion-button class="booking-btn" color="tertiary" routerLink="/tabs/tab2">Book an Appointment</ion-button>
+        </ion-col>
+      
+      </ion-grid>
+  
+    </ion-card>
+  </div>
+</ion-content>
+

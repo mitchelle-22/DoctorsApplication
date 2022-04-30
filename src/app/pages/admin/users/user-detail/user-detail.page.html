@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>loadedUser.name </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="deactivate()">
+        <ion-icon name="person-remove" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <ion-card>
+
+        
+          <h4>Name</h4>
+        <br>
+          <h4>Email</h4>
+          <br>
+          <h4>Phone</h4>
+          <br>
+          <h4>Select</h4>
+          <ion-select>
+            <ion-select-option value="brown">User</ion-select-option>
+            <ion-select-option value="blonde">Doctor</ion-select-option>
+            </ion-select>
+        
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <ion-button
+            type="submit"
+            (click)="onSubmit()"
+           
+          >
+            Update
+          </ion-button>
+         <!-- <ion-button
+             type="submit"
+            (click)="deactivate()"
+           
+          >
+            Disable Account
+          </ion-button> -->
+        </div>
+   
+      </ion-card>
+   
+</ion-content>

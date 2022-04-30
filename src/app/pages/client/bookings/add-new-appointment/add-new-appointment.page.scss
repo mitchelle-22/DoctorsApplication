@@ -1,0 +1,17 @@
+.custom-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.time__item {
+    border: 1px solid #333;
+    border-radius: 1 0px;
+    padding: 5px;
+}
+
+.time__item:hover {
+    background-color:aquamarine;
+}
+
+  

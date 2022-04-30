@@ -1,0 +1,65 @@
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Admin</ion-title>
+     
+    </ion-toolbar>
+    
+  </ion-header>
+      
+      <div class="center">
+        <div class="header-image">
+           
+              <img class="image"/>
+      
+            
+            <div class="welcome-msg">Welcome Admin</div>
+        </div>
+        
+       
+          <ion-grid>
+            <ion-row class="custom-row">
+              <ion-col size="3" class="d-flex">
+                <ion-icon name="person-add" size="large"></ion-icon>
+                <div class="icon-caption"  routerLink="/add-user">Add user</div>
+              </ion-col>
+              <ion-col size="3"  class="d-flex">
+                <ion-icon name="person" size="large"></ion-icon>
+                <div class="icon-caption" routerLink="/tabs/tab2">Update</div>
+              </ion-col>
+              <ion-col size="3" class="d-flex">
+                <ion-icon name="people" size="large"></ion-icon>
+                <div class="icon-caption" routerLink="/users">Users</div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="custom-row2">
+              <ion-col size="3" class="d-flex">
+                <ion-icon name="calendar" size="large"></ion-icon>
+                <div class="icon-caption"  routerLink="/tabs/tab3">Availability</div>
+              </ion-col>
+              <!-- <ion-col size="3"  class="d-flex">
+                <ion-icon name="bag-add" size="large"></ion-icon>
+                <div class="icon-caption">Bookings</div>
+              </ion-col> -->
+              <ion-col size="3" class="d-flex">
+                <ion-icon name="person" size="large"></ion-icon>
+                <div class="icon-caption" routerLink="/update-profile">Profile</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      
+        <!-- <div>
+          <ion-button class="booking-btn" color="tertiary"routerLink="/tabs/tab2">Book an Appointment</ion-button>
+      
+           
+        </div> -->
+      </div>
+      
+      
+
+
+     
+  
+
+</ion-content>

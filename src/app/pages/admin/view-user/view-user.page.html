@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let client of client" [routerLink]="['./', client.id]">
+      <ion-avatar slot="start">
+        <img [src]="client.imageUrl" />
+      </ion-avatar>
+      <ion-label>{{ client.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

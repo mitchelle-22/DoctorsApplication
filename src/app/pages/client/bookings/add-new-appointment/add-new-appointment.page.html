@@ -1,0 +1,78 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title>Add new appointment</ion-title>
+    <ion-icon name="close" slot="end" size="larger" class="ion-padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content >
+  <ion-card class="ion-align-self-center" >
+
+   <ion-item>
+     <ion-label >Appointment type</ion-label>
+     <ion-select [(ngModel)]="bookingType">
+       <ion-select-option value="Therapy">therapy</ion-select-option>
+       <ion-select-option value="X-ray">x-ray</ion-select-option>
+       <ion-select-option value="Surgery" selected>Surgery</ion-select-option>
+      </ion-select>
+   </ion-item>
+  
+   <ion-item>
+     <ion-icon name="calendar-outline"slot="start"> </ion-icon>
+     <ion-label >Date : </ion-label>
+     <ion-datetime min = "{{today}}" max="2800-12-31" displayFormat="D MMM YYYY" [(ngModel)]="date"></ion-datetime>
+   </ion-item>
+ <!-- min = "{{today}}" max="2800-12-31" -->
+
+ <ion-grid>
+  <ion-row class="custom-row" >
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+     <div class="icon-caption" class="time__item" (click)="tick()">10 : 00 AM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div  class="icon-caption" class="time__item" (click)="tick()">11 : 00 AM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div class="icon-caption" class="time__item" (click)="tick()">12 : 00 AM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div class="icon-caption" class="time__item" (click)="tick()">14 : 00 PM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div class="icon-caption" class="time__item" (click)="tick()">15 : 00 PM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div class="icon-caption" class="time__item" (click)="tick()">16 : 00 PM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div class="icon-caption" class="time__item" (click)="tick()">17 : 00 PM</div>
+    </ion-col>
+    <ion-col size="3" class="d-flex" style="height: 40px;position: relative;" >
+      
+      <div class="icon-caption" class="time__item" (click)="tick()">18 : 00 PM</div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+   <ion-item>
+      <ion-textarea  [(ngModel)]="docId"  placeholder="Appointment for : "></ion-textarea>
+   </ion-item>
+ 
+   <ion-item>
+    <ion-textarea [(ngModel)]="userId"  placeholder="Contact : "></ion-textarea>
+   </ion-item>
+   
+   <ion-button class="ion-margin" expand="block" shape="round" (click)="add()" >Book</ion-button>
+   <ion-button (click)="dismis()" shape="round" >close</ion-button>
+   
+  </ion-card>
+
+</ion-content>

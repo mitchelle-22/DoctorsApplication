@@ -1,0 +1,49 @@
+ion-col{
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  
+  .weekdays{
+    padding:2px 20px;
+  }
+  .appointment-time{
+    padding:2px 14px 0 17px;
+  }
+
+  .time-update{
+    padding: 9px 0px 0 0px;
+  }
+
+  .header-image::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+  }
+
+  .card-title{
+     padding: 7px;
+     color: red;
+  }
+
+  .booking-btn{
+    //  background-color: var(--ion-color-pColor);
+     align-items: center;
+     margin:10% 10% 0 10%;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+    
+    }
+
+    .lunch-text{
+      text-align: center;
+      margin: 10% 5% 0 5%;
+    }
+
+    ion-card{
+      margin: -10% 6% 0 6%;
+    }
